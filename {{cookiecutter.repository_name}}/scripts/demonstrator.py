@@ -4,7 +4,7 @@ just a sample script to show expected usage
 <replace as needed>
 
 usage:
-  pdm run scripts/testscript.py
+  pdm run scripts/demonstrator.py
 """
 
 import argparse
