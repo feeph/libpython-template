@@ -88,7 +88,11 @@ test = [
     "types-PyYAML>=6.0.12.20240311",
 ]
 
+# during development: fetch all packages in our namespace from TestPyPI
+#
+# this config is used exclusively by pdm and has no impact on regular
+# consumers using `pip install <package>` to install the package
 [[tool.pdm.source]]
 name = "testpypi"
 url = "https://test.pypi.org/simple/"
-include_packages = ["feeph-i2c"]
+include_packages = ["{{ cookiecutter.package_namespace }}-*"]
