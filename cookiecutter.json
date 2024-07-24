@@ -1,10 +1,11 @@
 {
     "author_name": "Feeph Aifeimei",
-    "github_alias": "feeph",
     "author_email": "55798703+feeph@users.noreply.github.com",
+    "github_alias": "feeph",
     "package_namespace": "feeph",
     "package_name": "magic",
     "package_description": "do something magical",
     "repository_name": "lib{{ cookiecutter.package_name }}-python",
+    "default_branch": "master",
     "python_constraint": ">=3.10,<3.13"
 }
