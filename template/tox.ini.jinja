@@ -53,7 +53,7 @@ description = lint code (flake8)
 deps =
     --global-option="$(python-config --includes)" -r requirements.txt
     --global-option="$(python-config --includes)" -r requirements-dev.txt
-commands = flake8 {posargs:{{ cookiecutter.package_namespace }} examples/ tests/}
+commands = flake8 {posargs:{{ package_namespace }} examples/ tests/}
 
 [testenv:type]
 description = check type hints
@@ -61,7 +61,7 @@ deps =
     --global-option="$(python-config --includes)" -r requirements.txt
     --global-option="$(python-config --includes)" -r requirements-dev.txt
 commands =
-    mypy -p {{ cookiecutter.package_namespace }}.{{ cookiecutter.package_name }}
+    mypy -p {{ package_namespace }}.{{ package_name }}
     mypy {posargs:examples/ tests/}
 
 ; code is incompatible with Python 3.9 due to type hints

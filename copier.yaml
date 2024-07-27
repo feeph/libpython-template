@@ -1,0 +1,90 @@
+---
+#
+# https://copier.readthedocs.io/
+#
+# use the command `pdm run copier update` to update the template data
+#
+
+# copier config settings
+# <https://copier.readthedocs.io/en/stable/configuring/>
+_subdirectory: template
+_message_after_copy: |
+    ----------------------------------------------------------------------------
+    Your Python package "{{ package_namespace }}.{{ package_name }}" is ready!
+    ----------------------------------------------------------------------------
+    Next steps:
+
+      cd {{ _copier_conf.dst_path }}
+      scripts/prepare_repository
+      scripts/run_tests
+
+package_namespace:
+  default: "feeph"
+  help: "package namespace (e.g. your name, team or organization)"
+  type: str
+  validator: >-
+    {% if not (package_namespace | regex_search('^[a-z][a-z0-9]+$')) %}
+    package_namespace should be a short, memorable, alphanumeric term
+
+    will be used as `import <package_namespace>.<package_name>`
+    {% endif %}
+
+package_name:
+  help: "package name"
+  type: str
+  validator: >-
+    {% if not (package_name | regex_search('^[a-z][a-z0-9]+$')) %}
+    package_name should be a short, memorable, alphanumeric term
+
+    will be used as `import <package_namespace>.<package_name>`
+    {% endif %}
+
+package_description:
+  placeholder: "do something magical"
+  help: "package description"
+  type: str
+
+author_name:
+  default: "Feeph Aifeimei"
+  help: "author name, e.g. John_Doe@company.invalid"
+  type: str
+
+author_email:
+  default: "55798703+feeph@users.noreply.github.com"
+  type: str
+  help: "author email, e.g. 12345678+john@users.noreply.github.com"
+
+repository_name:
+  default: "lib{{ package_name }}-python"
+  type: str
+  help: "repository name"
+
+repository_url:
+  default: "https://github.com/{{ package_namespace }}/{{ repository_name }}"
+  type: str
+  help: "The repository's URL, e.g. 'https://github.com/<org>/<repo>'"
+
+issuetracker_url:
+  default: "{{ repository_url }}/issues"
+  type: str
+  help: "The project's issue tracker URL, e.g. 'https://github.com/<org>/<repo>/issues'"
+
+default_branch:
+  default: "main"
+  type: str
+  help: "default branch"
+
+python_constraint:
+  default: ">=3.10,<3.13"
+  type: str
+  help: "Python version constraint"
+
+max_line_length:
+  default: 120
+  type: int
+  help: "Define the maximum allowed line length."
+
+is_typed:
+  default: true
+  type: bool
+  help: "This package provides type hints."

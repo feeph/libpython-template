@@ -18,18 +18,18 @@
 #     nastiness sticking out prominently.
 
 [project]
-name = "{{ cookiecutter.package_namespace }}.{{ cookiecutter.package_name }}"
+name = "{{ package_namespace }}.{{ package_name }}"
 version = "0.0.0"
-description = "{{ cookiecutter.package_description }}"
+description = "{{ package_description }}"
 authors = [
-    {name = "{{ cookiecutter.author_name }}", email = "{{ cookiecutter.author_email }}"},
+    {name = "{{ author_name }}", email = "{{ author_email }}"},
 ]
-requires-python = "{{ cookiecutter.python_constraint }}"
+requires-python = "{{ python_constraint }}"
 dependencies = [
 ]
 readme = "README.md"
 license = {text = "GPL-3.0-or-later"}
-repository = "https://github.com/{{ cookiecutter.github_alias }}/{{ cookiecutter.repository_name }}/"
+repository = "{{ repository_url }}"
 keywords = [
 ]
 classifiers = [
@@ -55,13 +55,13 @@ build-backend = "pdm.backend"
 [tool.isort]
 # use the black profile but override "multi_line_output"
 profile           = "black"
-line_length       = 250
+line_length       = {{ max_line_length }}
 multi_line_output = 7
-src_paths         = ["{{ cookiecutter.package_namespace }}/", "tests/"]
+src_paths         = ["{{ package_namespace }}/", "tests/"]
 
 # https://pypi.org/project/autopep8/
 [tool.autopep8]
-max_line_length = 250
+max_line_length = {{ max_line_length }}
 ignore          = ["E221", "E241"]
 in-place = true
 
@@ -80,7 +80,7 @@ filename = "requirements-dev.txt"
 groups = ["dev", "tools"]
 
 [tool.pdm.build]
-includes = ["{{ cookiecutter.package_namespace }}/"]
+includes = ["{{ package_namespace }}/"]
 source-includes = ["tests/"]
 
 [tool.pdm.dev-dependencies]
@@ -88,8 +88,10 @@ dev = [
 ]
 tools = [
     "autopep8     ~= 2.2",
+    "copier       ~= 9.3",
     "flake8       ~= 7.0",
     "mypy         ~= 1.10",
+    "pylint       ~= 3.2",
     "pytest-cov   ~= 5.0",
     "pytest-sugar ~= 1.0",
 ]
@@ -101,4 +103,9 @@ tools = [
 [[tool.pdm.source]]
 name = "testpypi"
 url = "https://test.pypi.org/simple/"
-include_packages = ["{{ cookiecutter.package_namespace }}-*"]
+include_packages = ["{{ package_namespace }}-*"]
+
+[tool.pylint."MESSAGES CONTROL"]
+fail-under = 8
+max-line-length = {{ max_line_length }}
+disable = "no-else-return,use-list-literal"
