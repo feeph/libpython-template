@@ -37,7 +37,7 @@ jobs:
         with:
           files_yaml: |
             library:
-              - {{ cookiecutter.package_namespace }}/**.py
+              - {{ "{{" }} cookiecutter.package_namespace {{ "}}" }}/**.py
             contrib:
               - examples/**.py
               - test/**.py
@@ -50,8 +50,8 @@ jobs:
           pdm install
       - name: lint code (flake8)
         env:
-          LIBRARY_FILES: ${{ steps.changed-files.outputs.library_all_changed_files }}
-          CONTRIB_FILES: ${{ steps.changed-files.outputs.contrib_all_changed_files }}
+          LIBRARY_FILES: ${{ "{{" }} steps.changed-files.outputs.library_all_changed_files {{ "}}" }}
+          CONTRIB_FILES: ${{ "{{" }} steps.changed-files.outputs.contrib_all_changed_files {{ "}}" }}
         run: |
           if [[ -n $LIBRARY_FILES ]] || [[ -n $CONTRIB_FILES ]]  ; then
             # the GitHub editor is 127 chars wide
@@ -59,11 +59,11 @@ jobs:
           fi
       - name: lint code (mypy)
         env:
-          CONTRIB_FILES: ${{ steps.changed-files.outputs.contrib_all_changed_files }}
+          CONTRIB_FILES: ${{ "{{" }} steps.changed-files.outputs.contrib_all_changed_files {{ "}}" }}
         run: |
           # since this is a namespace package we must instruct mypy to scan
           # the code as a namespace package; it won't work if we scan files
-          pdm run mypy -p {{ cookiecutter.package_namespace }}.{{ cookiecutter.package_name }}
+          pdm run mypy -p {{ "{{" }} cookiecutter.package_namespace {{ "}}" }}.{{ "{{" }} cookiecutter.package_name {{ "}}" }}
           # example scripts and tests can be scanned as files
           if [[ -n $CONTRIB_FILES ]] ; then
             pdm run mypy $CONTRIB_FILES
@@ -82,20 +82,20 @@ jobs:
     steps:
       - name: checkout repository
         uses: actions/checkout@v4
-      - name: configure Python ${{ matrix.python-version }}
+      - name: configure Python ${{ "{{" }} matrix.python-version {{ "}}" }}
         uses: actions/setup-python@v5
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: ${{ "{{" }} matrix.python-version {{ "}}" }}
       - name: install dependencies
         run: |
           pip install -r requirements.txt
           pip install pytest pytest-md pytest-emoji
       # https://github.com/marketplace/actions/run-pytest
-      - name: perform unit tests (Python ${{ matrix.python-version }})
+      - name: perform unit tests (Python ${{ "{{" }} matrix.python-version {{ "}}" }})
         env:
           PYTHONPATH: .
         uses: pavelzw/pytest-action@v2
         with:
           custom-arguments: '-q'
           emoji: false
-          report-title: 'Test Report (Python ${{ matrix.python-version }})'
+          report-title: 'Test Report (Python ${{ "{{" }} matrix.python-version {{ "}}" }})'
