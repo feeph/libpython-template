@@ -9,10 +9,13 @@ set -e
 set -u
 
 echo "-- initialize repository --"
-git init -b {{ cookiecutter.default_branch }}
+git init
 git config --local user.name {{ cookiecutter.author_name }}
 git config --local user.email {{ cookiecutter.author_email }}
-git remote add origin https://github.com/{{ cookiecutter.github_alias }}/{{ cookiecutter.repository_name }}.git
+
+git branch -M {{ cookiecutter.default_branch }}
+#git remote add origin https://github.com/{{ cookiecutter.github_alias }}/{{ cookiecutter.repository_name }}.git
+git remote add origin git@github.com:{{ cookiecutter.github_alias }}/{{ cookiecutter.repository_name }}.git
 
 echo "-- initialize git hooks --"
 for hook_type in pre-commit commit-msg post-commit pre-push ; do
@@ -30,5 +33,7 @@ pre-commit run --all-files
 echo "---------------------------------------------------------------------"
 echo "All good. Please execute the following commands to finalize:"
 echo "---------------------------------------------------------------------"
+# 'git commit' may require manual input to sign the commit
 echo "cd {{ cookiecutter.repository_name }}"
 echo "git commit -m 'chore: initialize the repository'"
+echo "git push --set-upstream origin master"
