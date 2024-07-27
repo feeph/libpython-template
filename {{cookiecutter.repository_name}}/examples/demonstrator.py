@@ -1,10 +1,10 @@
 #!/usr/bin/env
 """
-just a sample script to show expected usage
+an example script to show expected usage
 <replace as needed>
 
 usage:
-  pdm run scripts/demonstrator.py
+  pdm run examples/demonstrator.py
 """
 
 import argparse
