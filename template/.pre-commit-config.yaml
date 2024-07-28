@@ -6,7 +6,7 @@
 #  scripts/prepare_repository
 #
 # if you want to trigger pre-commit manually:
-#  pre-commit run --all-files
+#  pre-commit run
 #  pre-commit run --all-files
 #
 repos:
