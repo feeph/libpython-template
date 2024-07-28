@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/feeph/pypackage-template/compare/v0.1.1...v0.1.2) (2024-07-28)
+
+
+### Documentation
+
+* replace 'dependabot' with 'renovate' in README.md ([#5](https://github.com/feeph/pypackage-template/issues/5)) ([bc47352](https://github.com/feeph/pypackage-template/commit/bc47352ba76a448cf03ba5cb4090f37b7b5292b3))
+
 ## [0.1.1](https://github.com/feeph/pypackage-template/compare/v0.1.0...v0.1.1) (2024-07-28)
 
 
