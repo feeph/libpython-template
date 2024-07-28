@@ -31,7 +31,7 @@ repo_name="libmagic-python"
 
 git clone git@github.com:feeph/${repo_name}.git
 copier copy https://github.com/feeph/pypackage-seeddata $repo_name
-copier copy -a .copier/answers_pypackage.yaml https://github.com/feeph/pypackage-template $repo_name
+copier copy -a .copier/answers_pypackage.yaml -w https://github.com/feeph/pypackage-template $repo_name
 
 cd $repo_name
 scripts/prepare_repository
