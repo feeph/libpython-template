@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.3](https://github.com/feeph/pypackage-template/compare/v0.1.2...v0.1.3) (2024-07-28)
+
+
+### Bug Fixes
+
+* fix template definitions ([f5a76c0](https://github.com/feeph/pypackage-template/commit/f5a76c02ac7f59173a833eafcae4dec199917ca9))
+* tune Jinja settings ([1247253](https://github.com/feeph/pypackage-template/commit/1247253450ebd833e71df65161eaa18bba4f1ed0))
+
 ## [0.1.2](https://github.com/feeph/pypackage-template/compare/v0.1.1...v0.1.2) (2024-07-28)
 
 
