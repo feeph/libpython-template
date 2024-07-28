@@ -41,8 +41,7 @@ pdm run pytest
 ### injecting into an already existing codebase
 
 We either have an already existing codebase or we're uninterested in the
-example files. To prevent any kind of conflict we will ignore the seed
-entirely.
+example files. We will not use the seed data, only the template.
 
 ```SHELL
 repo_name="libsorcery-python"
