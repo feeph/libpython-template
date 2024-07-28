@@ -30,8 +30,8 @@ will be created by 'pypackage-template' and thus contains all variables.
 repo_name="libmagic-python"
 
 git clone git@github.com:feeph/${repo_name}.git
-copier copy https://github.com/feeph/pypackage-seeddata/ $repo_name
-copier copy -a .copier/answers_pypackage.yaml https://github.com/feeph/pypackage-template/ $repo_name
+copier copy https://github.com/feeph/pypackage-seeddata $repo_name
+copier copy -a .copier/answers_pypackage.yaml https://github.com/feeph/pypackage-template $repo_name
 
 cd $repo_name
 scripts/prepare_repository
@@ -48,7 +48,7 @@ entirely.
 repo_name="libsorcery-python"
 
 git clone git@github.com:feeph/${repo_name}.git
-copier copy https://github.com/feeph/pypackage-template/ $repo_name
+copier copy https://github.com/feeph/pypackage-template $repo_name
 
 cd $repo_name
 # <adjust files and commit>
