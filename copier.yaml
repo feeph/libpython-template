@@ -60,12 +60,12 @@ repository_name:
   help: "repository name"
 
 repository_url:
-  default: "https://github.com/{{ package_namespace }}/{{ repository_name }}"
+  default: "https://github.com/{{ package_namespace }}/{{ repository_name }}/"
   type: str
   help: "The repository's URL, e.g. 'https://github.com/<org>/<repo>'"
 
 issuetracker_url:
-  default: "{{ repository_url }}/issues"
+  default: "https://github.com/{{ package_namespace }}/{{ repository_name }}/issues"
   type: str
   help: "The project's issue tracker URL, e.g. 'https://github.com/<org>/<repo>/issues'"
 

@@ -53,7 +53,8 @@ description = lint code (flake8)
 deps =
     --global-option="$(python-config --includes)" -r requirements.txt
     --global-option="$(python-config --includes)" -r requirements-dev.txt
-commands = flake8 {posargs:{{ package_namespace }} examples/ tests/}
+commands =
+    flake8 {posargs:{{ package_namespace }} examples/ tests/}
 
 [testenv:type]
 description = check type hints
@@ -79,12 +80,14 @@ deps =
     --global-option="$(python-config --includes)" -r requirements-dev.txt
 # generate a coverage report but do not mesurements and do not fail
 # (we will combine all measurements into a single report later on)
-commands = pytest --cov --cov-append --cov-report= --cov-fail-under=0 tests {posargs}
+commands =
+    pytest --cov --cov-append --cov-report= --cov-fail-under=0 tests {posargs}
 
 [testenv:coverage_clean]
 deps = coverage
 skip_install = true
-commands = coverage erase
+commands =
+    coverage erase
 
 [testenv:coverage_report]
 deps = coverage

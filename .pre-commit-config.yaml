@@ -11,6 +11,7 @@
 #
 # if you want to trigger pre-commit manually:
 #  pre-commit run
+#  pre-commit run --all-files
 #
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks

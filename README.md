@@ -75,7 +75,7 @@ scripts/update_copier-templates
 
 ## Bugs & Features
 
-Please submit bugs and feature requests on the [issue tracker]( https://github.com/feeph/libpython-template/issues).
+Please submit bugs and feature requests on the [issue tracker](https://github.com/feeph/pypackage-template/issues).
 
 Contributions are always welcome.
 

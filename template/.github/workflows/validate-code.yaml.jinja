@@ -37,7 +37,7 @@ jobs:
         with:
           files_yaml: |
             library:
-              - {{ "{{" }} package_namespace {{ "}}" }}/**.py
+              - {{ package_namespace }}/**.py
             contrib:
               - examples/**.py
               - test/**.py
@@ -64,7 +64,7 @@ jobs:
         run: |
           # since this is a namespace package we must instruct mypy to scan
           # the code as a namespace package; it won't work if we scan files
-          pdm run mypy -p {{ "{{" }} package_namespace {{ "}}" }}.{{ "{{" }} package_name {{ "}}" }}
+          pdm run mypy -p {{ package_namespace }}.{{ package_name }}
           # example scripts and tests can be scanned as files
           if [[ -n $CONTRIB_FILES ]] ; then
             pdm run mypy $CONTRIB_FILES
