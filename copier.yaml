@@ -7,7 +7,14 @@
 
 # copier config settings
 # <https://copier.readthedocs.io/en/stable/configuring/>
-_subdirectory: template
+
+# tune Jinja templating engine
+# https://jinja.palletsprojects.com/en/3.1.x/api/#jinja2.Environment
+_envops:
+  keep_trailing_newline: true
+  lstrip_blocks: true
+  trim_blocks: true
+
 _message_after_copy: |
     ----------------------------------------------------------------------------
     Your Python package "{{ package_namespace }}.{{ package_name }}" is ready!
@@ -17,6 +24,10 @@ _message_after_copy: |
       cd {{ _copier_conf.dst_path }}
       scripts/prepare_repository
       scripts/run_tests
+
+_subdirectory: template
+
+# template variables
 
 package_namespace:
   default: "feeph"

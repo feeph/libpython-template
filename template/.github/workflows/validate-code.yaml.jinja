@@ -57,7 +57,7 @@ jobs:
             # the GitHub editor is 127 chars wide
             pdm run flake8 --max-line-length=127 --show-source --statistics $LIBRARY_FILES $CONTRIB_FILES
           fi
-{% if is_typed %}
+      {% if is_typed %}
       - name: lint code (mypy)
         env:
           CONTRIB_FILES: ${{ "{{" }} steps.changed-files.outputs.contrib_all_changed_files {{ "}}" }}
@@ -69,7 +69,7 @@ jobs:
           if [[ -n $CONTRIB_FILES ]] ; then
             pdm run mypy $CONTRIB_FILES
           fi
-{% endif %}
+      {% endif %}
   test:
     name: perform unit tests
     # wait on linting results; makes no sense to test if the code is broken
