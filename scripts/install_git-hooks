@@ -1,0 +1,9 @@
+#!/bin/bash
+#
+# install git hooks using pre-commit
+# <https://pre-commit.com/>
+#
+
+for hook_type in pre-commit commit-msg post-commit pre-push ; do
+    pre-commit install --allow-missing-config --hook-type $hook_type
+done

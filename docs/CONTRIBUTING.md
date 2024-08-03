@@ -20,7 +20,5 @@ This needs to be done for every cloned repository:
 
 ```SHELL
 # install pre-commit hooks
-for hook_type in pre-commit commit-msg post-commit pre-push ; do
-    pre-commit install --allow-missing-config --hook-type $hook_type
-done
+scripts/install_git-hooks
 ```
