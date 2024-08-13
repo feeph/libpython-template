@@ -9,7 +9,7 @@ copier template for Python-based libraries / packages
 - opinionated
 - use namespace packages to avoid naming collisions
 - use pdm, pyenv & tox for all our development needs
-- use pdm, pre-commit, release-please & renovate for all our packaging needs
+- use dependabot, pdm, pre-commit, release-please & renovate for all our packaging needs
 
 __namespaces__
 
