@@ -28,9 +28,7 @@ requires =
 env_list =
     lint
     type
-    coverage_clean
     py{310,311,312}
-    coverage_report
 
 ; pytest & coverage
 ; https://pytest-cov.readthedocs.io/en/latest/tox.html
@@ -70,9 +68,6 @@ commands =
 
 [testenv]
 description = install pytest in a virtual environment and invoke it on the tests folder
-depends =
-    {py310,py311,312}: coverage_clean
-    coverage_report: py310,py311,312
 set_env =
   VIRTUALENV_DISCOVERY = pyenv
 deps =
@@ -81,17 +76,4 @@ deps =
 # generate a coverage report but do not mesurements and do not fail
 # (we will combine all measurements into a single report later on)
 commands =
-    pytest --cov={{ package_namespace }}.{{ package_name }} --cov-append --cov-report= --cov-fail-under=0 {posargs: tests/}
-
-[testenv:coverage_clean]
-deps = coverage
-skip_install = true
-commands =
-    coverage erase
-
-[testenv:coverage_report]
-deps = coverage
-skip_install = true
-commands =
-    coverage report --show-missing
-    coverage html
+    pytest --no-cov {posargs: tests/}
