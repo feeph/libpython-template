@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.2](https://github.com/feeph/pypackage-template/compare/v0.2.1...v0.2.2) (2024-08-13)
+
+
+### Bug Fixes
+
+* remove trailing slash in repository_url ([#14](https://github.com/feeph/pypackage-template/issues/14)) ([5793e83](https://github.com/feeph/pypackage-template/commit/5793e83ee2d91efc91b2e242602ad4ca68a5a9bb))
+
 ## [0.2.1](https://github.com/feeph/pypackage-template/compare/v0.2.0...v0.2.1) (2024-08-13)
 
 
