@@ -7,15 +7,15 @@ set -e
 set -u
 
 # code quality
-pdm run flake8 {{package_namespace}}/ examples/ tests/
+pdm run flake8 {{ package_namespace }}/ examples/ tests/
 
 # code style
 # (pylint is configured to accept "less than perfect")
-pdm run pylint {{package_namespace}}/ examples/ tests/
+pdm run pylint {{ package_namespace }}/ examples/ tests/
 {% if is_typed %}
 
 # validate type hints (package)
-pdm run mypy -p {{package_namespace}}.{{package_name}}
+pdm run mypy -p {{ package_namespace }}.{{ package_name }}
 
 # validate type hints (extra files)
 # (we need to be careful since there might be no files)
