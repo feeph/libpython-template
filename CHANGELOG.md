@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.2](https://github.com/feeph/pypackage-template/compare/v0.3.1...v0.3.2) (2024-08-13)
+
+
+### Bug Fixes
+
+* don't ask for already known config items ([#20](https://github.com/feeph/pypackage-template/issues/20)) ([3e7f6c9](https://github.com/feeph/pypackage-template/commit/3e7f6c974cfecd375e42530ca3cf1b59b7beba0d))
+
 ## [0.3.1](https://github.com/feeph/pypackage-template/compare/v0.3.0...v0.3.1) (2024-08-13)
 
 
