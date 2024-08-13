@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.1](https://github.com/feeph/pypackage-template/compare/v0.3.0...v0.3.1) (2024-08-13)
+
+
+### Bug Fixes
+
+* add missing dependency 'coverage-lcov' ([#18](https://github.com/feeph/pypackage-template/issues/18)) ([b431d01](https://github.com/feeph/pypackage-template/commit/b431d01361cf5f1794689c52cf0422204aa554f5))
+
 ## [0.3.0](https://github.com/feeph/pypackage-template/compare/v0.2.2...v0.3.0) (2024-08-13)
 
 
