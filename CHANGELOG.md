@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.3.0](https://github.com/feeph/pypackage-template/compare/v0.2.2...v0.3.0) (2024-08-13)
+
+
+### Features
+
+* generate a code coverage badge (using coveralls.io) ([59543c5](https://github.com/feeph/pypackage-template/commit/59543c5400413c667b76d75a48e772962929a72c))
+* improve template definition ([1e5de4c](https://github.com/feeph/pypackage-template/commit/1e5de4cc893da491616ac4cc65e25472f24c01e9))
+
+
+### Bug Fixes
+
+* do not generate a coverage report from tox ([585b961](https://github.com/feeph/pypackage-template/commit/585b961451bcfd96b75fce4b44a3489957e66d45))
+* run code validation on pull requests, not push ([5cfae54](https://github.com/feeph/pypackage-template/commit/5cfae546c4ec9712755c6285f67f5c88a1f6f36a))
+
+
+### Documentation
+
+* update comment to explain why we run tox with --no-cov ([f988ee6](https://github.com/feeph/pypackage-template/commit/f988ee60a4661b2985928163a667520dc651dff9))
+
 ## [0.2.2](https://github.com/feeph/pypackage-template/compare/v0.2.1...v0.2.2) (2024-08-13)
 
 
