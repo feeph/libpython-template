@@ -44,7 +44,7 @@ package_name:
   help: "package name"
   type: str
   validator: >-
-    {% if not (package_name | regex_search('^[a-z][a-z0-9]+$')) %}
+    {% if not (package_name | regex_search('^[a-z][a-z0-9-]+$')) %}
     package_name should be a short, memorable, alphanumeric term
 
     will be used as `import <package_namespace>.<package_name>`
