@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://github.com/feeph/pypackage-template/compare/v0.3.2...v0.4.0) (2024-08-20)
+
+
+### Features
+
+* allow dash in package name ([#22](https://github.com/feeph/pypackage-template/issues/22)) ([07cde92](https://github.com/feeph/pypackage-template/commit/07cde92199bd3be1d381ef239d3a779d46ad6d7d))
+
 ## [0.3.2](https://github.com/feeph/pypackage-template/compare/v0.3.1...v0.3.2) (2024-08-13)
 
 
