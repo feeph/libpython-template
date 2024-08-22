@@ -44,7 +44,7 @@ package_name:
   help: "package name"
   type: str
   validator: >-
-    {% if not (package_name | regex_search('^[a-z][a-z0-9-]+$')) %}
+    {% if not (package_name | regex_search('^[a-z][a-z0-9_]+$')) %}
     package_name should be a short, memorable, alphanumeric term
 
     will be used as `import <package_namespace>.<package_name>`
@@ -66,7 +66,7 @@ author_email:
   help: "author email, e.g. 12345678+john@users.noreply.github.com"
 
 repository_name:
-  default: "lib{{ package_name }}-python"
+  default: "lib{{ package_name.replace('_', '-') }}-python"
   type: str
   help: "repository name"
 
