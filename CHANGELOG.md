@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.1](https://github.com/feeph/pypackage-template/compare/v0.4.0...v0.4.1) (2024-08-22)
+
+
+### Bug Fixes
+
+* use underscore instead of dash and replace as needed ([#24](https://github.com/feeph/pypackage-template/issues/24)) ([2a783cf](https://github.com/feeph/pypackage-template/commit/2a783cfecd44965af1edaf7628d015221d171cef))
+
 ## [0.4.0](https://github.com/feeph/pypackage-template/compare/v0.3.2...v0.4.0) (2024-08-20)
 
 
